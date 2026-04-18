@@ -45,6 +45,16 @@
                             <ChangeWarehouse />
                             <a-divider type="vertical" />
                         </template>
+                        <a-switch
+                            :checked="themeMode"
+                            @change="themeModeChanged"
+                            :loading="themeModeLoading"
+                            size="small"
+                        >
+                            <template #checkedChildren><BulbOutlined /></template>
+                            <template #unCheckedChildren><BulbOutlined /></template>
+                        </a-switch>
+                        <a-divider type="vertical" />
                         <a-dropdown
                             :placement="appSetting.rtl ? 'bottomLeft' : 'bottomRight'"
                         >
@@ -95,7 +105,12 @@
 <script>
 import { ref, reactive, computed, onMounted } from "vue";
 import { useStore } from "vuex";
-import { MenuOutlined, DownOutlined, ShoppingCartOutlined } from "@ant-design/icons-vue";
+import {
+    MenuOutlined,
+    DownOutlined,
+    ShoppingCartOutlined,
+    BulbOutlined,
+} from "@ant-design/icons-vue";
 import { useI18n } from "vue-i18n";
 import { loadLocaleMessages } from "../i18n";
 import { HeaderRightIcons } from "./style";
@@ -113,6 +128,7 @@ export default {
         ChangeWarehouse,
         AffixButton,
         ShoppingCartOutlined,
+        BulbOutlined,
     },
     setup(props, { emit }) {
         const {

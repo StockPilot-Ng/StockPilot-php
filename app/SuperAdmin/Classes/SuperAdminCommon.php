@@ -24,7 +24,7 @@ class SuperAdminCommon
         $websiteSetting->name_key = $langKey;
         $websiteSetting->credentials = [
             'lang_key' => $langKey,
-            'app_name' => 'Stockifly SAAS',
+            'app_name' => 'StockPilot SAAS',
             'header_logo' => 'website_onrfwiwasmjtqiezpe0v.png',
             'header_logo_url' => 'https://saas.stockifly.in/uploads/website/website_onrfwiwasmjtqiezpe0v.png',
             'header_sidebar_logo' => 'website_r4ykpmmpmm3jw6bcyfdl.png',
@@ -41,7 +41,7 @@ class SuperAdminCommon
 
             'header_title' => 'Billing & Inventory Management with POS and Online Store',
             'header_sub_title' => 'Manage Your inventory In Easy Way',
-            'header_description' => 'Best-rated  billing and inventory management application for small to large scale business. It’s built using Vue and Laravel. Stockifly have all major features related to inventory  managed to improve your business growth',
+            'header_description' => 'Best-rated  billing and inventory management application for small to large scale business. It’s built using Vue and Laravel. StockPilot have all major features related to inventory  managed to improve your business growth',
             'header_button1_show' => '1',
             'header_button1_text' => 'Start Free Trail',
             'header_button1_url' => 'https://saas.stockifly.in/register',
@@ -69,7 +69,7 @@ class SuperAdminCommon
             'contact_email_text' => 'Send Email',
             'contact_phone_text' => 'Call Us',
             'contact_address_text' => 'Address',
-            'contact_email' => 'contact@stockifly.com',
+            'contact_email' => 'contact@stockpilot.com',
             'contact_phone' => '123456789',
             'contact_address' => '1 Stree City State Country TN, 38401',
             'contact_form_title' => 'Get connected',
@@ -83,7 +83,7 @@ class SuperAdminCommon
             'contact_form_background_image_url' => 'https://saas.stockifly.in/uploads/website/website_p5sbnqcicgxxnyj2zogs.jpeg',
             'contact_us_submit_message_text' => 'Thanks for contacting us. We will catch you soon.',
 
-            'register_title' => 'Join Stockifly for free',
+            'register_title' => 'Join StockPilot for free',
             'register_description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada tellus vestibulum, commodo pulvinar.',
             'register_background' => 'website_xk2pcyjxncee3duknp26.svg',
             'register_background_url' => 'https://saas.stockifly.in/uploads/website/website_xk2pcyjxncee3duknp26.svg',
@@ -92,8 +92,8 @@ class SuperAdminCommon
             'register_password_text' => 'Password',
             'register_confirm_password_text' => 'Confirm Passwrod',
             'register_submit_button_text' => 'SIGN UP FOR Free',
-            'register_agree_text' => 'I agree to the Terms & Conditions of Stockifly',
-            'register_agree_url' => 'I agree to the Terms & Conditions of Stockifly',
+            'register_agree_text' => 'I agree to the Terms & Conditions of StockPilot',
+            'register_agree_url' => 'I agree to the Terms & Conditions of StockPilot',
             'error_contact_support' => 'Some error occurred when inserting the data. Please try again or contact support',
             'register_success_text' => 'Thank you for registration. Please login to get started',
 
@@ -175,7 +175,7 @@ class SuperAdminCommon
             'client_description' => 'Vetted by leaders within the Meat Processing Industry.',
 
             'footer_description' => "Don't hesitate, Our experts will show you how our application can streamline the way your team works.",
-            'footer_copyright_text' => 'Copyright 2021 @ Stockifly, All rights reserved',
+            'footer_copyright_text' => 'Copyright 2021 @ StockPilot, All rights reserved',
             'footer_logo' => 'website_jazw9qtjklv4ohh7q9fd.png',
             'footer_logo_url' => 'https://saas.stockifly.in/uploads/website/website_jazw9qtjklv4ohh7q9fd.png',
             'footer_links_text' => 'Links',
@@ -406,7 +406,7 @@ class SuperAdminCommon
                 'name' => 'Mitch',
                 'image' => 'website_umglm6u0pifn4djq1z0e.png',
                 'image_url' => 'https://saas.stockifly.in/uploads/website/website_umglm6u0pifn4djq1z0e.png',
-                'comment' => 'The easy of the Stockifly software allowed me to migrate out current workflow into the system along with train our employees without hardship.',
+                'comment' => 'The easy of the StockPilot software allowed me to migrate out current workflow into the system along with train our employees without hardship.',
                 'rating' => 5,
             ),
             1 =>
@@ -415,7 +415,7 @@ class SuperAdminCommon
                 'name' => 'Aaron',
                 'image' => 'website_yclshvui5dn2wmq2lidu.png',
                 'image_url' => 'https://saas.stockifly.in/uploads/website/website_yclshvui5dn2wmq2lidu.png',
-                'comment' => 'Leveraging modern technology and passion for supporting local Ag, Stockifly is the next evolutionary stage in the procurement of software to streamline workflow for processors.',
+                'comment' => 'Leveraging modern technology and passion for supporting local Ag, StockPilot is the next evolutionary stage in the procurement of software to streamline workflow for processors.',
                 'rating' => 5,
             ),
             2 =>
@@ -467,7 +467,7 @@ class SuperAdminCommon
             [
                 "id" => "vfxekis7pcd",
                 "title" => "Powerful Reports System",
-                "description" => "Stockifly comes with powerful reporting tools which will help you to control your business. You can download reports in multiple formats so that you can use them later",
+                "description" => "StockPilot comes with powerful reporting tools which will help you to control your business. You can download reports in multiple formats so that you can use them later",
                 "image" => "website_qx3ee00qpexlljrersp4.webp",
                 "image_url" => "https://saas.stockifly.in/uploads/website/website_qx3ee00qpexlljrersp4.webp",
                 "features" => [
@@ -571,9 +571,9 @@ class SuperAdminCommon
                 'id' => '1jzmhcpnshn',
                 'page_key' => 'home',
                 'seo_title' => 'Home',
-                'seo_author' => 'stockifly',
-                'seo_keywords' => 'stockifly saas',
-                'seo_description' => 'stockifly saas',
+                'seo_author' => 'stockpilot',
+                'seo_keywords' => 'stockpilot saas',
+                'seo_description' => 'stockpilot saas',
                 'seo_image' => 'website_cldv2lidmrtm4uxqwz42.png',
                 'seo_image_url' => 'https://saas.stockifly.in/uploads/website/website_r4ykpmmpmm3jw6bcyfdl.png',
             ],
@@ -581,9 +581,9 @@ class SuperAdminCommon
                 'id' => '2jzmhcpnshn',
                 'page_key' => 'register',
                 'seo_title' => 'Register',
-                'seo_author' => 'stockifly',
-                'seo_keywords' => 'register, stockifly',
-                'seo_description' => 'stockifly saas register',
+                'seo_author' => 'stockpilot',
+                'seo_keywords' => 'register, stockpilot',
+                'seo_description' => 'stockpilot saas register',
                 'seo_image' => 'website_cldv2lidmrtm4uxqwz42.png',
                 'seo_image_url' => 'https://saas.stockifly.in/uploads/website/website_r4ykpmmpmm3jw6bcyfdl.png',
             ],
@@ -591,9 +591,9 @@ class SuperAdminCommon
                 'id' => '3jzmhcpnshn',
                 'page_key' => 'features',
                 'seo_title' => 'Features',
-                'seo_author' => 'stockifly',
+                'seo_author' => 'stockpilot',
                 'seo_keywords' => 'features',
-                'seo_description' => 'stockifly features page',
+                'seo_description' => 'stockpilot features page',
                 'seo_image' => 'website_cldv2lidmrtm4uxqwz42.png',
                 'seo_image_url' => 'https://saas.stockifly.in/uploads/website/website_r4ykpmmpmm3jw6bcyfdl.png',
             ],
@@ -601,9 +601,9 @@ class SuperAdminCommon
                 'id' => '4jzmhcpnshn',
                 'page_key' => 'contact',
                 'seo_title' => 'Contact Us',
-                'seo_author' => 'stockifly',
+                'seo_author' => 'stockpilot',
                 'seo_keywords' => 'contact us',
-                'seo_description' => 'stockifly contact us page',
+                'seo_description' => 'stockpilot contact us page',
                 'seo_image' => 'website_cldv2lidmrtm4uxqwz42.png',
                 'seo_image_url' => 'https://saas.stockifly.in/uploads/website/website_r4ykpmmpmm3jw6bcyfdl.png',
             ],
@@ -611,9 +611,9 @@ class SuperAdminCommon
                 'id' => '5jzmhcpnshn',
                 'page_key' => 'pricing',
                 'seo_title' => 'Pricing',
-                'seo_author' => 'stockifly',
+                'seo_author' => 'stockpilot',
                 'seo_keywords' => 'pricing',
-                'seo_description' => 'stockifly pricing page',
+                'seo_description' => 'stockpilot pricing page',
                 'seo_image' => 'website_cldv2lidmrtm4uxqwz42.png',
                 'seo_image_url' => 'https://saas.stockifly.in/uploads/website/website_r4ykpmmpmm3jw6bcyfdl.png',
             ],
@@ -803,8 +803,8 @@ class SuperAdminCommon
         // And on observer currency will be created
         $globalCompany = new GlobalCompany();
         $globalCompany->is_global = 1;
-        $globalCompany->name = 'Stockifly SAAS';
-        $globalCompany->short_name = 'Stockifly';
+        $globalCompany->name = 'StockPilot SAAS';
+        $globalCompany->short_name = 'StockPilot';
         $globalCompany->email = 'superadmin_company@example.com';
         $globalCompany->phone = '+9199999999';
         $globalCompany->address = '7 street, city, state, 762782';

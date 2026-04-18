@@ -1,6 +1,6 @@
-# Hosting and Setup Guide for Stockifly
+# Hosting and Setup Guide for StockPilot
 
-This guide provides step-by-step instructions to host, publish, and start using the Stockifly platform.
+This guide provides step-by-step instructions to host, publish, and start using the StockPilot platform.
 
 ---
 
@@ -22,6 +22,12 @@ For the easiest deployment experience, we recommend using **Render**. It provide
 5. **Environment Variables:**
    - Go to the **Environment** tab in Render.
    - Use the values from [RENDER_ENV_TEMPLATE.md](./RENDER_ENV_TEMPLATE.md) as a guide to set up your variables.
+
+### Troubleshooting Render Build (Exit Status 127)
+If your build fails with "Exited with status 127", it usually means a command in your Build Command string (e.g., `npm` or `composer`) is not found or there is a permission issue.
+- **Check Runtime:** Ensure you selected the **PHP** runtime.
+- **Dependency Availability:** Render's PHP environment includes `composer` and `npm` by default. If the error persists, try running them as separate steps or checking the full logs for which specific command failed.
+- **Memory Limits:** Sometimes large `npm install` operations can hit memory limits. Ensure you are using a plan with sufficient resources.
 
 ---
 

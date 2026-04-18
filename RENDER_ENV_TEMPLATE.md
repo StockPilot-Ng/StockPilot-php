@@ -4,7 +4,7 @@ Copy and paste these values into the **Environment Variables** section of your R
 
 ```env
 # Application Configuration
-APP_NAME=Stockifly
+APP_NAME=StockPilot
 APP_ENV=production
 APP_DEBUG=false
 APP_URL=https://your-app-name.onrender.com

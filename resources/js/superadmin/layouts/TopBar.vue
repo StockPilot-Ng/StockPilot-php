@@ -9,6 +9,16 @@
             <a-col :span="20">
                 <HeaderRightIcons>
                     <a-space>
+                        <a-switch
+                            :checked="themeMode"
+                            @change="themeModeChanged"
+                            :loading="themeModeLoading"
+                            size="small"
+                        >
+                            <template #checkedChildren><BulbOutlined /></template>
+                            <template #unCheckedChildren><BulbOutlined /></template>
+                        </a-switch>
+                        <a-divider type="vertical" />
                         <a-dropdown
                             :placement="appSetting.rtl ? 'bottomLeft' : 'bottomRight'"
                         >
@@ -59,7 +69,11 @@
 <script>
 import { ref, reactive, computed, onMounted } from "vue";
 import { useStore } from "vuex";
-import { MenuOutlined, DownOutlined } from "@ant-design/icons-vue";
+import {
+    MenuOutlined,
+    DownOutlined,
+    BulbOutlined,
+} from "@ant-design/icons-vue";
 import { useI18n } from "vue-i18n";
 import { loadLocaleMessages } from "../../common/i18n";
 import { HeaderRightIcons } from "./style";
@@ -71,6 +85,7 @@ export default {
         MenuOutlined,
         DownOutlined,
         HeaderRightIcons,
+        BulbOutlined,
     },
     setup(props, { emit }) {
         const { user, appSetting, permsArray, menuCollapsed } = common();

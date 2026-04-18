@@ -4,9 +4,21 @@ This guide provides step-by-step instructions to host, publish, and start using 
 
 ---
 
-## 1. Recommended Hosting: Render
+## 1. Hosting Options
 
-For the easiest deployment experience, we recommend using **Render**. It provides a managed environment for PHP/Laravel with an integrated build pipeline.
+### Option A: Render (Recommended for full functionality)
+Render provides a managed environment for PHP/Laravel with persistent storage and a standard build pipeline.
+- **Guide:** Follow the instructions in the "Setup on Render" section below.
+- **Best for:** Applications that need file storage, background queues, and long-running tasks.
+
+### Option B: Vercel (Alternative for quick deployments)
+Vercel is a high-performance serverless platform. Note that it has a read-only filesystem and execution time limits.
+- **Guide:** [VERCEL_SETUP_GUIDE.md](./VERCEL_SETUP_GUIDE.md)
+- **Best for:** Speed and simplicity, if you use external storage (like S3) for uploads.
+
+---
+
+## 2. Recommended Hosting: Render
 
 ### Setup on Render:
 1. **New Web Service:** In your Render dashboard, create a new Web Service and connect your Git repository.
@@ -21,35 +33,27 @@ For the easiest deployment experience, we recommend using **Render**. It provide
    ```
 5. **Environment Variables:**
    - Go to the **Environment** tab in Render.
-   - Use the values from [RENDER_ENV_TEMPLATE.md](./RENDER_ENV_TEMPLATE.md) as a guide to set up your variables.
+   - Use the values from [RENDER_ENV_TEMPLATE.md](./RENDER_ENV_TEMPLATE.md) as a guide.
 
 ### Troubleshooting Render Build (Exit Status 127)
-If your build fails with "Exited with status 127", it usually means a command in your Build Command string (e.g., `npm` or `composer`) is not found or there is a permission issue.
-- **Check Runtime:** Ensure you selected the **PHP** runtime.
-- **Dependency Availability:** Render's PHP environment includes `composer` and `npm` by default. If the error persists, try running them as separate steps or checking the full logs for which specific command failed.
-- **Memory Limits:** Sometimes large `npm install` operations can hit memory limits. Ensure you are using a plan with sufficient resources.
+If your build fails with "Exited with status 127":
+- Ensure you selected the **PHP** runtime.
+- Check that `composer` and `npm` are available in the logs.
+- Large `npm install` may require more memory than available on the free tier.
 
 ---
 
-## 2. Recommended Database: Neon (Postgres)
+## 3. Recommended Database: Neon (Postgres)
 
 You can use **Neon** for a serverless, scalable PostgreSQL database.
 
 ### Setup on Neon:
 1. **Create Project:** Create a new project in the Neon console.
 2. **Connection String:** Copy the connection details from your Neon dashboard.
-3. **Laravel Configuration:** Use the `pgsql` driver and update your environment variables accordingly.
+3. **Laravel Configuration:** Use the `pgsql` driver and update your environment variables.
 
 ### PostgreSQL Compatibility Note:
-The application was primarily tested with MySQL. While Laravel's Eloquent ORM is database-agnostic, some manual migrations (using `DB::statement`) might contain MySQL-specific syntax (like backticks \` or `CHANGE COLUMN`). If you encounter errors during migration, you may need to update these specific migration files to use standard SQL or Postgres-compatible syntax.
-
----
-
-## 3. Technical Requirements (Own Server)
-
-- **PHP Version:** 8.1 or higher
-- **Required PHP Extensions:** `openssl`, `pdo`, `mbstring`, `tokenizer`, `fileinfo`, `curl`, `zip`, `gd`, `bcmath`, `ctype`, `json`, `xml`.
-- **Node.js & NPM:** For building frontend assets.
+The application was primarily tested with MySQL. While Laravel's Eloquent ORM is database-agnostic, some manual migrations (using `DB::statement`) might contain MySQL-specific syntax (like backticks \` or `CHANGE COLUMN`). If you encounter errors during migration, update these specific migration files to use standard SQL or Postgres-compatible syntax.
 
 ---
 

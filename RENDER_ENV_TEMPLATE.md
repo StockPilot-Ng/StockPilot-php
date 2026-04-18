@@ -18,11 +18,11 @@ DB_USERNAME=your-username
 DB_PASSWORD=your-password
 
 # Generate this locally using 'php artisan key:generate --show'
-APP_KEY=base64:q0vaYh6aZGFgS0SymgLC+9NcNUm7R+87pxCU8CSZuG8=
+APP_KEY=YOUR_GENERATED_APP_KEY_HERE
 
 # Security
 # Generate a new random string for JWT_SECRET
-JWT_SECRET=IzCfOXLrKi5Hq9ZhW7vROlUn8NFlKSaF4vlgvJnFuqnQcyJrYe7JaecXOb0iqc5B
+JWT_SECRET=YOUR_RANDOM_JWT_SECRET_HERE
 JWT_TTL=365
 
 # Drivers

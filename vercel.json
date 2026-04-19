@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "framework": "laravel",
     "outputDirectory": "public",
     "rewrites": [
         {
@@ -8,10 +7,6 @@
             "destination": "/api/index.php"
         }
     ],
-    {
-      "outputDirectory": "public"
-    }
-
     "functions": {
         "api/index.php": {
             "runtime": "vercel-php@0.7.0"

@@ -8,7 +8,7 @@ This guide explains how to deploy StockPilot to Vercel using a Neon PostgreSQL d
 
 ## 2. Configuration Files
 The following files have been added to your project to support Vercel:
-- `vercel.json`: Configures the PHP runtime and URL rewrites.
+- `vercel.json`: Configures the PHP runtime, URL rewrites, and the **Output Directory**.
 - `api/index.php`: The entry point for Vercel functions.
 
 ## 3. Vercel Deployment Steps
@@ -39,7 +39,11 @@ Vercel's serverless functions have a read-only filesystem (except for `/tmp`).
 Serverless functions have execution time limits. Long-running tasks (like large PDF generation or complex imports) may timeout. We recommend using a dedicated queue worker (like on Render or AWS) for heavy background processing.
 
 ## 5. Troubleshooting
-If you encounter a 500 error:
+
+### Error: No Output Directory named "dist" found
+By default, Vercel looks for a `dist` folder. Since Laravel uses the `public` folder for compiled assets, we have explicitly set `"outputDirectory": "public"` in your `vercel.json`. If you still see this error, ensure the `vercel.json` file is in your root directory.
+
+### 500 Internal Server Error
 1. Check the **Logs** tab in your Vercel project.
 2. Ensure `APP_KEY` is set correctly.
 3. Verify that your Neon database is accessible from Vercel (check Neon's IP allowlist/Project settings).

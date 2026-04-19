@@ -38,15 +38,15 @@
                 >
                     {{ $t("menu.stripe") }}
                 </a-menu-item>
-                <!-- <a-menu-item
+                <a-menu-item
                     key="paypal"
                     @click="
                         $router.push({ name: 'superadmin.payment_settings.paypal.index' })
                     "
                 >
                     {{ $t("menu.paypal") }}
-                </a-menu-item> -->
-                <!-- <a-menu-item
+                </a-menu-item>
+                <a-menu-item
 					key="razorpay"
 					@click="
 						$router.push({
@@ -67,6 +67,16 @@
 					{{ $t("menu.paystack") }}
 				</a-menu-item>
 				<a-menu-item
+					key="flutterwave"
+					@click="
+						$router.push({
+							name: 'superadmin.payment_settings.flutterwave.index',
+						})
+					"
+				>
+					{{ $t("menu.flutterwave") }}
+				</a-menu-item>
+				<a-menu-item
 					key="mollie"
 					@click="
 						$router.push({ name: 'superadmin.payment_settings.mollie.index' })
@@ -83,7 +93,7 @@
 					"
 				>
 					{{ $t("menu.authorize") }}
-				</a-menu-item> -->
+				</a-menu-item>
             </a-menu>
         </perfect-scrollbar>
     </div>

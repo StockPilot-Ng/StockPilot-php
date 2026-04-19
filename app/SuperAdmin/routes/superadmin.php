@@ -85,7 +85,11 @@ ApiRoute::group(['namespace' => 'App\SuperAdmin\Http\Controllers\Api', 'prefix' 
         ApiRoute::post('razorpay/update', ['as' => 'api.payment-settings.razorpay.update', 'uses' => 'PaymentSettingsController@updateRazorpay']);
         ApiRoute::get('razorpay', ['as' => 'api.payment-settings.razorpay.index', 'uses' => 'PaymentSettingsController@getRazorpay']);
         ApiRoute::post('paystack/update', ['as' => 'api.payment-settings.paystack.update', 'uses' => 'PaymentSettingsController@updatePaystack']);
+        ApiRoute::post("flutterwave/update", ["as" => "api.payment-settings.flutterwave.update", "uses" => "PaymentSettingsController@updateFlutterwave"]);
+        ApiRoute::get("flutterwave", ["as" => "api.payment-settings.flutterwave.index", "uses" => "PaymentSettingsController@getFlutterwave"]);
         ApiRoute::get('paystack', ['as' => 'api.payment-settings.paystack.index', 'uses' => 'PaymentSettingsController@getPaystack']);
+        ApiRoute::post("flutterwave/update", ["as" => "api.payment-settings.flutterwave.update", "uses" => "PaymentSettingsController@updateFlutterwave"]);
+        ApiRoute::get("flutterwave", ["as" => "api.payment-settings.flutterwave.index", "uses" => "PaymentSettingsController@getFlutterwave"]);
         ApiRoute::post('mollie/update', ['as' => 'api.payment-settings.mollie.update', 'uses' => 'PaymentSettingsController@updateMollie']);
         ApiRoute::get('mollie', ['as' => 'api.payment-settings.mollie.index', 'uses' => 'PaymentSettingsController@getMollie']);
         ApiRoute::post('authorize/update', ['as' => 'api.payment-settings.authorize.update', 'uses' => 'PaymentSettingsController@updateAuthorize']);

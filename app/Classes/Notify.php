@@ -159,4 +159,40 @@ class Notify
 
         $sender->notify(new MainNotificaiton($notficationData));
     }
+
+    public static function sendSms($to, $message, $companyId = null)
+    {
+        if (app_type() == 'saas') {
+            $globalCompany = DB::table('companies')->where('is_global', 1)->first();
+            $smsSetting = DB::table('settings')->where('setting_type', 'sms')
+                ->where('name_key', 'termii')
+                ->where('is_global', 1)
+                ->where('company_id', $globalCompany->id)
+                ->first();
+        } else {
+            $smsSetting = Settings::where('setting_type', 'sms')
+                ->where('name_key', 'termii')
+                ->first();
+        }
+
+        if ($smsSetting && $smsSetting->status) {
+            $credentials = is_string($smsSetting->credentials) ? json_decode($smsSetting->credentials) : (object) $smsSetting->credentials;
+            $apiKey = $credentials->api_key;
+            $senderId = $credentials->sender_id;
+
+            if ($apiKey != '' && $senderId != '') {
+                // Termii SMS API implementation
+                // $url = "https://api.ng.termii.com/api/sms/send";
+                // $data = [
+                //     "to" => $to,
+                //     "from" => $senderId,
+                //     "sms" => $message,
+                //     "type" => "plain",
+                //     "channel" => "generic",
+                //     "api_key" => $apiKey,
+                // ];
+                // ...
+            }
+        }
+    }
 }

@@ -35,5 +35,13 @@ class PaymentModesTableSeeder extends Seeder
         $paymentMode = new PaymentMode();
         $paymentMode->name = "Paypal";
         $paymentMode->save();
+
+        $paymentMode = new PaymentMode();
+        $paymentMode->name = "Paystack";
+        $paymentMode->save();
+
+        $paymentMode = new PaymentMode();
+        $paymentMode->name = "Flutterwave";
+        $paymentMode->save();
     }
 }

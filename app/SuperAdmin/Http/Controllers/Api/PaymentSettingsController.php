@@ -12,6 +12,8 @@ use App\SuperAdmin\Http\Requests\Api\PaymentSettings\RazorpayUpdateRequest;
 use App\SuperAdmin\Http\Requests\Api\PaymentSettings\PaystackIndexRequest;
 use App\SuperAdmin\Http\Requests\Api\PaymentSettings\PaystackUpdateRequest;
 use App\SuperAdmin\Http\Requests\Api\PaymentSettings\MollieIndexRequest;
+use App\SuperAdmin\Http\Requests\Api\PaymentSettings\FlutterwaveIndexRequest;
+use App\SuperAdmin\Http\Requests\Api\PaymentSettings\FlutterwaveUpdateRequest;
 use App\SuperAdmin\Http\Requests\Api\PaymentSettings\MollieUpdateRequest;
 use App\SuperAdmin\Http\Requests\Api\PaymentSettings\AuthorizeIndexRequest;
 use App\SuperAdmin\Http\Requests\Api\PaymentSettings\AuthorizeUpdateRequest;
@@ -259,6 +261,47 @@ class PaymentSettingsController extends ApiBaseController
             ->update([
                 'credentials' => $settingData,
                 'status' => $request->authorize_status == 'active' ? 1 : 0
+            ]);
+
+        return ApiResponse::make('Success', []);
+    }
+
+    public function getFlutterwave(FlutterwaveIndexRequest $request)
+    {
+        $settings = GlobalSettings::where('setting_type', 'payment_settings')
+            ->where('name_key', 'flutterwave')
+            ->first();
+
+        $settingData = [
+            'flutterwave_public_key' => $settings->credentials['flutterwave_public_key'],
+            'flutterwave_secret_key' => $settings->credentials['flutterwave_secret_key'],
+            'flutterwave_webhook_secret_hash' => $settings->credentials['flutterwave_webhook_secret_hash'],
+            'flutterwave_status' => $settings->credentials['flutterwave_status'],
+        ];
+
+        return ApiResponse::make(
+            'Success',
+            [
+                'data' => $settingData,
+                'webhook_url' => route('webhook.save-flutterwave-invoices')
+            ]
+        );
+    }
+
+    public function updateFlutterwave(FlutterwaveUpdateRequest $request)
+    {
+        $settingData = [
+            'flutterwave_public_key' => $request->flutterwave_public_key,
+            'flutterwave_secret_key' => $request->flutterwave_secret_key,
+            'flutterwave_webhook_secret_hash' => $request->flutterwave_webhook_secret_hash,
+            'flutterwave_status' => $request->flutterwave_status,
+        ];
+
+        GlobalSettings::where('setting_type', 'payment_settings')
+            ->where('name_key', 'flutterwave')
+            ->update([
+                'credentials' => $settingData,
+                'status' => $request->flutterwave_status == 'active' ? 1 : 0
             ]);
 
         return ApiResponse::make('Success', []);

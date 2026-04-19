@@ -10,6 +10,7 @@ Route::group(['namespace' => 'Front'], function () {
     Route::post('/save-paypal-invoices', ['as' => 'webhook.save-paypal-invoices', 'uses' => 'PaymentWebhookController@verifyBillingIPN']);
     Route::post('/save-razorpay-invoices', ['as' => 'webhook.save-razorpay-invoices', 'uses' => 'RazorpayWebhookController@saveInvoices']);
     Route::post('/save-paystack-invoices', ['as' => 'webhook.save-paystack-invoices', 'uses' => 'PaymentWebhookController@savePaystackInvoices']);
+    Route::post("/save-flutterwave-invoices", ["as" => "webhook.save-flutterwave-invoices", "uses" => "PaymentWebhookController@saveFlutterwaveInvoices"]);
 
     Route::group(['middleware' => ['web']], function () {
         Route::get('/', ['as' => 'front.index', 'uses' => 'HomeController@index']);

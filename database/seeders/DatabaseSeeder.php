@@ -41,6 +41,7 @@ class DatabaseSeeder extends Seeder
             $this->call(PaymentsTableSeeder::class);
             $this->call(ExpenseTableSeeder::class);
             $this->call(ExpenseTableSeeder::class);
+            $this->call(NigeriaTaxSeeder::class);
 
             $this->call(FrontWebsiteSettingsDatabaseSeeder::class);
             $this->call(FrontProductCardDatabaseSeeder::class);

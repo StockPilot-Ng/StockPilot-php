@@ -5,6 +5,7 @@ import PaypalSetting from '../views/subscriptions/payment-settings/Paypal.vue';
 import StripeSetting from '../views/subscriptions/payment-settings/Stripe.vue';
 import RazorpaySetting from '../views/subscriptions/payment-settings/Razorpay.vue';
 import PaystackSetting from '../views/subscriptions/payment-settings/Paystack.vue';
+import FlutterwaveSetting from '../views/subscriptions/payment-settings/Flutterwave.vue';
 import MollieSetting from '../views/subscriptions/payment-settings/Mollie.vue';
 import AuthorizeSetting from '../views/subscriptions/payment-settings/Authorize.vue';
 
@@ -76,6 +77,17 @@ export default [
                     requireAuth: true,
                     menuParent: "subscriptions",
                     menuKey: route => "paystack",
+                    permission: "superadmin"
+                }
+            },
+            {
+                path: 'flutterwave',
+                component: FlutterwaveSetting,
+                name: 'superadmin.payment_settings.flutterwave.index',
+                meta: {
+                    requireAuth: true,
+                    menuParent: "subscriptions",
+                    menuKey: route => "flutterwave",
                     permission: "superadmin"
                 }
             },

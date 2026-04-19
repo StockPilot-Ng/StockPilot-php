@@ -894,6 +894,27 @@ class Common
                 ];
                 $smtp->is_global = $company->is_global;
                 $smtp->save();
+
+            $termiiSmsSettingCount = Settings::withoutGlobalScope(CompanyScope::class)
+                ->where('setting_type', 'sms')
+                ->where('name_key', 'termii')
+                ->where('is_global', $company->is_global)
+                ->where('company_id', $company->id)
+                ->count();
+            if ($termiiSmsSettingCount == 0) {
+                $termii = new Settings();
+                $termii->company_id = $company->id;
+                $termii->setting_type = 'sms';
+                $termii->name = 'Termii';
+                $termii->name_key = 'termii';
+                $termii->credentials = [
+                    'api_key' => '',
+                    'sender_id' => '',
+                ];
+                $termii->is_global = $company->is_global;
+                $termii->status = 0;
+                $termii->save();
+            }
             }
         }
 

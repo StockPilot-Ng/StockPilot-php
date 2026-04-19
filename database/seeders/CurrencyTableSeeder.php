@@ -38,5 +38,13 @@ class CurrencyTableSeeder extends Seeder
         $rupeeCurrency->position = 'front';
         $rupeeCurrency->is_deletable = false;
         $rupeeCurrency->save();
+
+        $nairaCurrency = new Currency();
+        $nairaCurrency->name = 'Naira';
+        $nairaCurrency->code = 'NGN';
+        $nairaCurrency->symbol = '₦';
+        $nairaCurrency->position = 'front';
+        $nairaCurrency->is_deletable = false;
+        $nairaCurrency->save();
     }
 }

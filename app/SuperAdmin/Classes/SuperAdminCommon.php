@@ -687,6 +687,20 @@ class SuperAdminCommon
                 'paystack_status' => 'inactive',
             ];
             $paystack->save();
+            // Flutterwave
+            $flutterwave = new GlobalSettings();
+            $flutterwave->is_global = 1;
+            $flutterwave->company_id = $company->id;
+            $flutterwave->setting_type = 'payment_settings';
+            $flutterwave->name = 'Flutterwave Payment Settings';
+            $flutterwave->name_key = 'flutterwave';
+            $flutterwave->credentials = [
+                'flutterwave_public_key' => '',
+                'flutterwave_secret_key' => '',
+                'flutterwave_webhook_secret_hash' => '',
+                'flutterwave_status' => 'inactive',
+            ];
+            $flutterwave->save();
 
             // Mollie
             $mollie = new GlobalSettings();
@@ -774,6 +788,11 @@ class SuperAdminCommon
                     $allPaymentMethod->credentials = [
                         'paystack_client_id' => $allPaymentMethod->credentials['paystack_client_id'],
                         'paystack_status' => $allPaymentMethod->credentials['paystack_status'],
+                    ];
+                } else if ($allPaymentMethod->name_key == 'flutterwave') {
+                    $allPaymentMethod->credentials = [
+                        'flutterwave_public_key' => $allPaymentMethod->credentials['flutterwave_public_key'],
+                        'flutterwave_status' => $allPaymentMethod->credentials['flutterwave_status'],
                     ];
                 } else if ($allPaymentMethod->name_key == 'mollie') {
                     $allPaymentMethod->credentials = [

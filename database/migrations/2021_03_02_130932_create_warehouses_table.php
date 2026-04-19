@@ -32,8 +32,8 @@ class CreateWarehousesTable extends Migration
         // Creating only for non-saas
         // if (app_type() == 'non-saas') {
         //     DB::table('warehouses')->insert([
-        //         'name' => 'Stockifly',
-        //         'email' => 'stockifly@example.com',
+        //         'name' => 'StockPilot',
+        //         'email' => 'stockpilot@example.com',
         //         'phone' => 9999999999,
         //         'terms_condition' => "1. Goods once sold will not be taken back or exchanged
         //         2. All disputes are subject to [ENTER_YOUR_CITY_NAME] jurisdiction only",

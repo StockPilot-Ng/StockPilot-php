@@ -14,7 +14,7 @@ Route::get('{path}', function () {
         // Front Store Warehouse
         $frontStoreDetails = Common::getStoreWarehouse();
 
-        $appName = "StockiflySaas";
+        $appName = "StockPilotSAAS";
         $appVersion = File::get(public_path() . '/superadmin_version.txt');
         $modulesData = Common::moduleInformations();
         $themeMode = session()->has('theme_mode') ? session('theme_mode') : 'light';

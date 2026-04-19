@@ -17,7 +17,7 @@
 <div class="master">
     <div class="box">
         <div class="header">
-			<img src="{{ asset('images/dark.png') }}" height="40px" style="margin-bottom: 15px;" alt="Stockifly">
+			<img src="{{ asset('images/dark.png') }}" height="40px" style="margin-bottom: 15px;" alt="StockPilot">
             <h1 class="header__title">@yield('title')</h1>
         </div>
         <ul class="step">

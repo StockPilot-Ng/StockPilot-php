@@ -15,6 +15,7 @@ class SuperAdminLangTrans
             'stripe' => 'Stripe',
             'razorpay' => 'Razorpay',
             'paystack' => 'Paystack',
+            'flutterwave' => 'Flutterwave',
             'mollie' => 'Mollie',
             'authorize' => 'Authorize',
             'website_settings' => 'Website Settings',

@@ -283,4 +283,11 @@ class PaymentWebhookController extends Controller
 
         return $response;
     }
+
+    public function saveFlutterwaveInvoices(Request $request)
+    {
+        // This is a placeholder for Flutterwave Webhook
+        // It should handle event 'charge.completed'
+        return response('Webhook Handled', 200);
+    }
 }

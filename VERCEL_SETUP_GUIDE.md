@@ -10,6 +10,7 @@ This guide explains how to deploy StockPilot to Vercel using a Neon PostgreSQL d
 The following files have been added to your project to support Vercel:
 - `vercel.json`: Configures the PHP runtime, URL rewrites, and the **Output Directory**.
 - `api/index.php`: The entry point for Vercel functions.
+- `vite.config.js`: Optimized to split large vendor files into smaller chunks.
 
 ## 3. Vercel Deployment Steps
 
@@ -40,8 +41,13 @@ Serverless functions have execution time limits. Long-running tasks (like large 
 
 ## 5. Troubleshooting
 
+### Build Issues (Vite Chunk Size Warnings)
+If your deployment hangs or fails during the build phase:
+- We have optimized `vite.config.js` to split large libraries (like Ant Design and Charts) into separate chunks.
+- If you still see "chunk size" warnings, you can further increase the `chunkSizeWarningLimit` in `vite.config.js`.
+
 ### Error: No Output Directory named "dist" found
-By default, Vercel looks for a `dist` folder. Since Laravel uses the `public` folder for compiled assets, we have explicitly set `"outputDirectory": "public"` in your `vercel.json`. If you still see this error, ensure the `vercel.json` file is in your root directory.
+By default, Vercel looks for a `dist` folder. Since Laravel uses the `public` folder for compiled assets, we have explicitly set `"outputDirectory": "public"` in your `vercel.json`.
 
 ### 500 Internal Server Error
 1. Check the **Logs** tab in your Vercel project.

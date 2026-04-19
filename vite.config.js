@@ -20,21 +20,15 @@ export default defineConfig({
         splitVendorChunkPlugin(),
     ],
     build: {
-        // chunkSizeWarningLimit: 900000,
-        // rollupOptions: {
-        //     output: {
-        //         entryFileNames: `assets/[name].js`,
-        //         chunkFileNames: function (file) {
-        //             return `assets/[name].js`;
-        //         },
-        //         assetFileNames: (assetInfo) => {
-        //             return `assets/[name][extname]`;
-        //         },
-        //         manualChunks: {
-        //             ant_design_vue: ['ant-design-vue']
-        //         }
-        //     }
-        // }
+        chunkSizeWarningLimit: 2000,
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    'vendor-ui': ['ant-design-vue', '@ant-design/icons-vue'],
+                    'vendor-charts': ['chart.js', 'vue-chart-3'],
+                }
+            }
+        }
     },
     server: {
         hmr: {
